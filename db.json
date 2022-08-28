@@ -1,3 +1,23 @@
 {
-  "user": []
+  "user": [
+    {
+      "id": 1,
+      "email": "japo@gmail.com",
+      "password": "12341234"
+    },
+    {
+      "fullName": "asdasd  `2312",
+      "email": "japoshvili777@gmail.com",
+      "password": "123123",
+      "confirmPassword": "214124124",
+      "id": 2
+    },
+    {
+      "fullName": "sadasdasdasd",
+      "email": "12231213123",
+      "password": "3123123",
+      "confirmPassword": "123123123",
+      "id": 3
+    }
+  ]
 }
