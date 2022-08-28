@@ -1,0 +1,24 @@
+<div class="forms-wrapper" [formGroup]="regFormGroup">
+  <form>
+    <h1>Sign Up</h1>
+    <hr>
+    <div>
+      <label>Full name</label>
+      <input type="text" formControlName="fullName">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" formControlName="email">
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password">
+    </div>
+    <div>
+      <label>Re-Password</label>
+      <input type="password" formControlName="confirmPassword">
+    </div>
+    <p>Already have an account? <span (click)="toLogin()">Sign in</span></p>
+    <button>Register</button>
+  </form>
+</div>

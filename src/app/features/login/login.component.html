@@ -1,0 +1,17 @@
+<div class="forms-wrapper" [formGroup]="loginFormGroup">
+  <form>
+    <h1>Login In</h1>
+    <hr>
+    <div>
+      <label>Email</label>
+      <input type="text" formControlName="email">
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password">
+    </div>
+    <p>Don't have an account? <span (click)="toRegistration()">Register</span></p>
+    <button>Login In</button>
+  </form>
+</div>
+
