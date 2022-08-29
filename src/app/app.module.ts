@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { RegistrationComponent } from './features/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
+import { MainMenuComponent } from './features/mainmenu/mainMenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

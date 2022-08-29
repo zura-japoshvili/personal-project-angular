@@ -33,10 +33,15 @@ export class LoginComponent implements OnInit {
 
   public onLogin(){
     this.UserService.userLogin(this.loginFormGroup.value).pipe(tap((response: any) => {
-      console.log(response)
-      // localStorage.setItem('token', response.accessToken)
-      // localStorage.setItem('id', response.id)
-      // localStorage.setItem('email', response.email)
+      if (response){
+        console.log(response)
+        localStorage.setItem('id', response.id)
+        localStorage.setItem('email', response.email)
+        localStorage.setItem('fullName', response.fullName)
+        console.log(localStorage)
+        this.router.navigateByUrl('/mainMenu').then()
+      }
+
     })).subscribe()
 
   }

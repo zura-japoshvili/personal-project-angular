@@ -18,6 +18,13 @@
       "password": "3123123",
       "confirmPassword": "123123123",
       "id": 3
+    },
+    {
+      "fullName": "adsadasdsadasd",
+      "email": "japoshvili777@gmail.com",
+      "password": "123123123123",
+      "confirmPassword": "21423541345125",
+      "id": 4
     }
   ]
 }
