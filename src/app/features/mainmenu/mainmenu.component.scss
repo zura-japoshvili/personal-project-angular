@@ -1,0 +1,44 @@
+.menu-wrapper{
+  background-color: #00001d;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  button{
+    width: 150px;
+    height: 50px;
+    color: #40276e;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 5px #009a78;
+    transition-duration: 0.5s;
+    &.start-btn{
+      background-color: #ecec2a;
+      &:hover{
+        box-shadow: 1px 0px 29px 0px #ecec2a;
+        transform: scale(1.1);
+      }
+    }
+    &.records-btn{
+      background-color: #003296;
+      color: #ecec2a;
+      &:hover{
+        box-shadow: 1px 0px 29px 0px #44bfcc;
+        transform: scale(1.1);
+      }
+    }
+    &.top-btn{
+      background-color: #009a78;
+      color: #86063e;
+      &:hover{
+        box-shadow: 1px 0px 29px 0px #4186ce;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+}

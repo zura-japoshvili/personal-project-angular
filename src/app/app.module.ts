@@ -8,13 +8,15 @@ import { RegistrationComponent } from './features/registration/registration.comp
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
 import { MainMenuComponent } from './features/mainmenu/mainMenu.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 .forms-wrapper{
-  height: 100vh;
+  min-height: 100vh;
   background: rgb(182,122,149);
   background: linear-gradient(34deg, rgba(182,122,149,1) 0%, rgba(101,158,170,1) 100%);
   display: flex;
@@ -15,11 +15,16 @@
     > div{
       display: flex;
       flex-direction: column;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       input{
         height: 30px;
         border-radius: 5px;
         border: 1px solid #838282;
+      }
+      span{
+        color: #e54f4f;
+        font-size: 12px;
+        margin: 2.5px 0 0 10px;
       }
     }
     h1{
@@ -53,7 +58,11 @@
         background-color: #003296;
         transform: scale(1.1);
       }
-
+    }
+    button{
+      &:disabled{
+        background-color: #e54f4f;
+      }
     }
 
   }

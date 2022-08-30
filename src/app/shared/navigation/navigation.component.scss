@@ -1,0 +1,30 @@
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #0a55de;
+  p{
+    font-size: 22px;
+    color: #ffffff;
+  }
+  button{
+    background-color: #e54f4f;
+    color: #ffffff;
+    height: 30px;
+    border: none;
+    width: 70px;
+    border-radius: 8px;
+    margin: 0 25px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    &:hover{
+      box-shadow: 1px 0px 20px 0px #ab0000;
+      transform: scale(1.1);
+    }
+  }
+}

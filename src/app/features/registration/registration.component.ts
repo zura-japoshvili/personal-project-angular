@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UserService} from "../../core/services/user.service";
 import {tap} from "rxjs";
+import {fakeAsync} from "@angular/core/testing";
 
 
 @Component({
@@ -37,6 +38,21 @@ export class RegistrationComponent implements OnInit {
 
   public toLogin():void {
     this.router.navigateByUrl('/login').then()
+  }
+  get email(){
+    return this.regFormGroup.get('email') as FormControl;
+  }
+  get fullName(){
+    return this.regFormGroup.get('fullName') as FormControl
+  }
+  get pass(){
+    return this.regFormGroup.get('password') as FormControl
+  }
+  get validatePass(){
+    if (this.regFormGroup.get('password') !== this.regFormGroup.get('confirmPassword')){
+      return true;
+    }
+    return false;
   }
 
 }
