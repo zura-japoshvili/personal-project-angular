@@ -7,8 +7,9 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { RegistrationComponent } from './features/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
-import { MainMenuComponent } from './features/mainmenu/mainMenu.component';
+import { MainMenuComponent } from './features/main-menu/main-menu.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
+import { GameMenuComponent } from './features/game-menu/game-menu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
     LoginComponent,
     RegistrationComponent,
     MainMenuComponent,
-    NavigationComponent
+    NavigationComponent,
+    GameMenuComponent
   ],
   imports: [
     BrowserModule,

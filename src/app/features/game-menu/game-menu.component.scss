@@ -1,0 +1,48 @@
+.game-menu{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #00001d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 400px;
+    width: 70%;
+    label{
+      color: #ffffff;
+      margin-top: 30px;
+      font-size: 40px;
+    }
+    select{
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+    }
+    .start-game-btn{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #ecec2a;
+      margin-top: 30px;
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+      -webkit-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+      border-radius: 8px;
+      border: none;
+      font-size: 20px;
+      font-family: 'Nova Square', cursive;
+      color: #40276e;
+    }
+  }
+}
