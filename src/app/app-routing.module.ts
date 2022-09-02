@@ -6,6 +6,7 @@ import {RegistrationComponent} from "./features/registration/registration.compon
 import {MainMenuComponent} from "./features/main-menu/main-menu.component";
 import {LoginGuard} from "./core/guards/login.guard";
 import {GameMenuComponent} from "./features/game-menu/game-menu.component";
+import {GameComponent} from "./features/game/game.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'game-menu',
     component: GameMenuComponent,
+    // canActivate: [LoginGuard]
+  },
+  {
+    path: 'game',
+    component: GameComponent,
     // canActivate: [LoginGuard]
   }
 ]

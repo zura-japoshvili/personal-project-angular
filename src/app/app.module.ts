@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MainMenuComponent } from './features/main-menu/main-menu.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { GameMenuComponent } from './features/game-menu/game-menu.component';
+import { GameComponent } from './features/game/game.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GameMenuComponent } from './features/game-menu/game-menu.component';
     RegistrationComponent,
     MainMenuComponent,
     NavigationComponent,
-    GameMenuComponent
+    GameMenuComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

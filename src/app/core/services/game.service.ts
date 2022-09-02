@@ -12,8 +12,15 @@ export class GameService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  private selectedData = {}
+
   public getCategories(): Observable<CategoriesInt>{
     return this.http.get<CategoriesInt>('https://opentdb.com/api_category.php');
   }
-
+  public setSelectedData(data: any){
+    this.selectedData = data;
+  }
+  public getSelectedData(){
+    return this.selectedData;
+  }
 }
