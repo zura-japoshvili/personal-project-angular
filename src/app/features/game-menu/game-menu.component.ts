@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {GameService} from "../../core/services/game.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {gameSettingInt} from "../../core/interfaces/gameSettingInt";
 
 
 @Component({
@@ -28,7 +29,8 @@ export class GameMenuComponent implements OnInit {
   }
 
   public onStart(){
-    this.gameService.setSelectedData(this.gameMenuForm.value);
+
+    this.gameService.setSelectedData(this.gameMenuForm.value as gameSettingInt);
     this.router.navigateByUrl('/game').then()
   }
 

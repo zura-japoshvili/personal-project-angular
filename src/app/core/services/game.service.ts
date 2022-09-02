@@ -4,23 +4,32 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {IUser} from "../interfaces/userInterface";
 import {CategoriesInt} from "../interfaces/categoriesInt";
+import {gameSettingInt} from "../interfaces/gameSettingInt";
+import {resultsInt} from "../interfaces/resultsInt";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient,
+              private router: Router,
+             ) {}
+  // https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple
 
-  private selectedData = {}
-
+  private selectedData!: gameSettingInt
   public getCategories(): Observable<CategoriesInt>{
     return this.http.get<CategoriesInt>('https://opentdb.com/api_category.php');
   }
-  public setSelectedData(data: any){
+  public setSelectedData(data: gameSettingInt){
     this.selectedData = data;
   }
   public getSelectedData(){
     return this.selectedData;
   }
+
+  public getQuestion(category: number | string, diff: number | string): Observable<resultsInt>{
+    return this.http.get<resultsInt>(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${diff}&type=multiple`)
+  }
+
 }
