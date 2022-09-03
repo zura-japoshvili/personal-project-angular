@@ -1,4 +1,13 @@
-import {ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {GameService} from "../../core/services/game.service";
@@ -19,6 +28,7 @@ export class GameComponent implements OnInit {
 
   @ViewChild('question') question!:ElementRef
   @ViewChild('answersCont') answersCont!:ElementRef
+  @ViewChildren('answers') Answers!:QueryList<ElementRef>;
 
   public settings!: gameSettingInt
 
@@ -51,12 +61,10 @@ export class GameComponent implements OnInit {
 
       const randomAnswers = this.randomAnswers(res.results[0].incorrect_answers, res.results[0].correct_answer)
 
-      let answers = '';
-      randomAnswers.forEach(value => {
-         answers+= `<button class="answers">${value}</button>`
+      this.Answers.forEach((value, index) => {
+        value.nativeElement.innerHTML = randomAnswers[index]
       })
 
-      this.answersCont.nativeElement.innerHTML = answers;
     })).subscribe()
   }
 }
