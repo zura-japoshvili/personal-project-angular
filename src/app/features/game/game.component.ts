@@ -34,12 +34,14 @@ export class GameComponent implements OnInit {
   public settings!: gameSettingInt
   public score = 0
   public ansProgress = 1;
-  public ansPercent = 0;
+  public ansPercent = 10;
   private combo = 0;
+  public EndGameActive = false
 
   ngOnInit(): void {
     this.settings = this.gameService.getSelectedData()
     this.generateQuestion()
+
   }
 
   private randomAnswers(arr: [], correct: string): string[]{

@@ -1,4 +1,5 @@
 .game-content{
+  position: relative;
   min-height: 100vh;
   background-color: #00001d;
   display: flex;
@@ -32,9 +33,11 @@
         border: 3px solid #1c9650;
         display: flex;
         .progress{
+          width: 10%;
           height: 31px;
           background-color: #1c9650;
           border-radius: 10px;
+          transition-duration: 1s;
           p{
             position: absolute;
             top: 20%;
@@ -47,7 +50,7 @@
   }
   .question{
     margin-top: 30px;
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 15px;
   }
   .question-cont{
@@ -88,5 +91,52 @@
         background-color: #e54f4f;
       }
     }
+  }
+  .end-game-cont{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.83);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .end-wrapper{
+      position: absolute;
+      transition-duration: 0.5s;
+      transform: translateY(-200%);
+      width: 0%;
+      height: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 29, 0.93);
+      box-shadow: 1px 0px 15px 0px #ff9634;
+      border: 1px solid red;
+      border-radius: 12px;
+      &.active{
+        width: 60%;
+        height: 60%;
+        transform: translateY(10%);
+      }
+      h4{
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+      div{
+        button{
+          margin: 10px;
+          width: 120px;
+          height: 40px;
+          font-size: 18px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+      }
+    }
+
   }
 }

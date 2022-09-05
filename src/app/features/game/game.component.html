@@ -20,5 +20,15 @@
   <div class="nextBtnCont">
     <button (click)="nextQuestion()"  class="next" #nextBtn disabled>Next Question</button>
   </div>
+  <div (click)="EndGameActive = true" class="end-game-cont" >
+    <div [className]="EndGameActive ? 'end-wrapper active' : 'end-wrapper'">
+      <h4>Your score is: {{score}}</h4>
+      <div class="btn-cont">
+        <button>Play Again</button>
+        <button>Main Menu</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
