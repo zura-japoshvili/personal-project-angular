@@ -31,9 +31,8 @@
         border-radius: 15px;
         border: 3px solid #1c9650;
         display: flex;
-        div{
-          width: 10%;
-          height: 30px;
+        .progress{
+          height: 31px;
           background-color: #1c9650;
           border-radius: 10px;
           p{
@@ -48,7 +47,7 @@
   }
   .question{
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 15px;
   }
   .question-cont{
@@ -61,7 +60,7 @@
       text-align: left;
       padding-left: 10px;
       color: #ffffff;
-      font-size: 25px;
+      font-size: 22px;
       background-color: #3550a1;
       margin-bottom: 10px;
       transition-duration: 0.5s;
@@ -85,6 +84,9 @@
       height: 50px;
       background-color: #6db772;
       cursor: pointer;
+      &:disabled{
+        background-color: #e54f4f;
+      }
     }
   }
 }
