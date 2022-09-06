@@ -4,6 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UserService} from "../../core/services/user.service";
 import {tap} from "rxjs";
+import {loginUserInt} from "../../core/interfaces/loginUserInt";
+import {IUser} from "../../core/interfaces/userInterface";
 
 @Component({
   selector: 'app-login',
@@ -32,10 +34,13 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(){
-    this.UserService.userLogin(this.loginFormGroup.value).pipe(tap((response: any) => {
+    this.UserService.userLogin(this.loginFormGroup.value as loginUserInt).pipe(tap((response: IUser | undefined) => {
       if (response){
-        console.log(response)
-        localStorage.setItem('id', response.id)
+        //TS2345: Argument of type 'string | number | undefined' is not assignable to parameter of
+        // type 'string'.   Type 'undefined' is not assignable to type 'string'.
+        if (typeof response.id === "string") {
+          localStorage.setItem('id', response.id)
+        }
         localStorage.setItem('email', response.email)
         localStorage.setItem('fullName', response.fullName)
         console.log(localStorage)

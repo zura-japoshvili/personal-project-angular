@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UserService} from "../../core/services/user.service";
 import {tap} from "rxjs";
-import {fakeAsync} from "@angular/core/testing";
+import {IUser} from "../../core/interfaces/userInterface";
 
 
 @Component({
@@ -31,8 +31,7 @@ export class RegistrationComponent implements OnInit {
   }
   public onRegister(){
 
-    this.UserService.userRegistration(this.regFormGroup.value).pipe(tap((response :any) => {
-      console.log(4)
+    this.UserService.userRegistration(this.regFormGroup.value as IUser).pipe(tap((response :IUser) => {
       console.log(response)
     })).subscribe()
   }

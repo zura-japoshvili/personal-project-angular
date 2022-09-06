@@ -15,5 +15,10 @@ export class MainMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  public onStart(){
+    this.router.navigateByUrl('/game-menu').then()
+  }
+  public onScoreboard(){
+    this.router.navigateByUrl('/login').then()
+  }
 }

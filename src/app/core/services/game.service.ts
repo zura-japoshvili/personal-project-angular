@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
 import {Observable} from "rxjs";
-import {IUser} from "../interfaces/userInterface";
 import {CategoriesInt} from "../interfaces/categoriesInt";
 import {gameSettingInt} from "../interfaces/gameSettingInt";
 import {resultsInt} from "../interfaces/resultsInt";
@@ -13,8 +11,7 @@ import {resultsInt} from "../interfaces/resultsInt";
 export class GameService {
 
   constructor(private http: HttpClient,
-              private router: Router,
-             ) {}
+              ) {}
   // https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple
 
   private selectedData!: gameSettingInt
