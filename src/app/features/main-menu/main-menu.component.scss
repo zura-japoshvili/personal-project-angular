@@ -23,15 +23,7 @@
         transform: scale(1.1);
       }
     }
-    &.records-btn{
-      background-color: #003296;
-      color: #ecec2a;
-      &:hover{
-        box-shadow: 1px 0px 29px 0px #44bfcc;
-        transform: scale(1.1);
-      }
-    }
-    &.top-btn{
+    &.scoreboard{
       background-color: #009a78;
       color: #86063e;
       &:hover{

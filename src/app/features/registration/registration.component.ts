@@ -30,6 +30,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
   public onRegister(){
+
     this.UserService.userRegistration(this.regFormGroup.value).pipe(tap((response :any) => {
       console.log(4)
       console.log(response)
