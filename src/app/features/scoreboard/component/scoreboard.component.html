@@ -1,4 +1,7 @@
-<app-navigation></app-navigation>
+<!--<app-navigation></app-navigation>-->
 <div class="scoreboard">
-
+  <p>1123123</p>
+    <ng-container *ngFor="let user of userScore | async">
+        <p>{{user.score}}</p>
+    </ng-container>
 </div>

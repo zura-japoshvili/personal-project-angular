@@ -8,7 +8,7 @@ import {RouterModule} from "@angular/router";
 
 
 @NgModule({
-  declarations: [ScoreboardComponent, NavigationComponent],
+  declarations: [ScoreboardComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{path: '', component: ScoreboardComponent}]),

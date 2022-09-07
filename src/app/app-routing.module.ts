@@ -49,7 +49,7 @@ const routes: Routes = [
       import('./features/scoreboard/scoreboard.module').then(
         (res) => res.ScoreboardModule
       ),
-    canActivate: [LoginGuard]
+    // canActivate: [LoginGuard]
   },
   {
     path: '**',

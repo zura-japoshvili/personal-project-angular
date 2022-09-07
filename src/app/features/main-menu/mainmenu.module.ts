@@ -7,11 +7,10 @@ import {NavigationComponent} from "../../shared/navigation/navigation.component"
 
 
 @NgModule({
-  declarations: [MainMenuComponent,
-      NavigationComponent],
+  declarations: [MainMenuComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: '', component: MainMenuComponent },{path: '', component: NavigationComponent}])
+    RouterModule.forChild([{ path: '', component: MainMenuComponent }])
   ]
 })
 export class MainmenuModule { }
