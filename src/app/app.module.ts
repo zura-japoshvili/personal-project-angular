@@ -7,20 +7,14 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { RegistrationComponent } from './features/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
-import { MainMenuComponent } from './features/main-menu/main-menu.component';
-import { NavigationComponent } from './shared/navigation/navigation.component';
-import { GameMenuComponent } from './features/game-menu/game-menu.component';
-import { GameComponent } from './features/game/game.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    MainMenuComponent,
-    NavigationComponent,
-    GameMenuComponent,
-    GameComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

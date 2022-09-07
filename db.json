@@ -1,29 +1,35 @@
 {
   "user": [
     {
-      "id": 1,
-      "email": "japo@gmail.com",
-      "password": "12341234"
+      "fullName": "Zura",
+      "email": "japoshvili777@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "score": 412,
+      "id": 1
     },
     {
-      "fullName": "asdasd  `2312",
+      "fullName": "Zura JAJA",
       "email": "japoshvili777@gmail.com",
-      "password": "123123",
-      "confirmPassword": "214124124",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "score": 301,
       "id": 2
     },
     {
-      "fullName": "sadasdasdasd",
-      "email": "12231213123",
-      "password": "3123123",
+      "fullName": "Zura AZAZA",
+      "email": "japoshvili777@gmail.com",
+      "password": "123123123",
       "confirmPassword": "123123123",
+      "score": 10,
       "id": 3
     },
     {
-      "fullName": "adsadasdsadasd",
+      "fullName": "Zura JAJAasdsad",
       "email": "japoshvili777@gmail.com",
-      "password": "123123123123",
-      "confirmPassword": "21423541345125",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "score": 3031,
       "id": 4
     }
   ]

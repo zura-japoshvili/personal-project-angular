@@ -32,7 +32,7 @@ export class RegistrationComponent implements OnInit {
   public onRegister(){
 
     this.UserService.userRegistration(this.regFormGroup.value as IUser).pipe(tap((response :IUser) => {
-      console.log(response)
+      this.router.navigateByUrl('/login').then()
     })).subscribe()
   }
 

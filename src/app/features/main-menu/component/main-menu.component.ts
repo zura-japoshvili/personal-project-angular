@@ -19,6 +19,6 @@ export class MainMenuComponent implements OnInit {
     this.router.navigateByUrl('/game-menu').then()
   }
   public onScoreboard(){
-    this.router.navigateByUrl('/login').then()
+    this.router.navigateByUrl('/scoreboard').then()
   }
 }

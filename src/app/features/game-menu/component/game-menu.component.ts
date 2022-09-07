@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {GameService} from "../../core/services/game.service";
+import {GameService} from "../../../core/services/game.service";
 import {FormControl, FormGroup} from "@angular/forms";
-import {gameSettingInt} from "../../core/interfaces/gameSettingInt";
+import {gameSettingInt} from "../../../core/interfaces/gameSettingInt";
 
 
 @Component({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs";
+import {map, tap} from "rxjs";
 import {IUser} from "../interfaces/userInterface";
 import {Observable} from "rxjs";
 import {loginUserInt} from "../interfaces/loginUserInt";
@@ -15,7 +15,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
   private baseUrl = 'http://localhost:3000';
 
-  private getAllUsers(): Observable<IUser[]>{
+  public getAllUsers(): Observable<IUser[]>{
     return this.http.get<IUser[]>(this.baseUrl + '/user');
   }
 
@@ -31,6 +31,19 @@ export class UserService {
   }
 
   public userRegistration(user: IUser): Observable<IUser>{
+    user.score = 0;
     return this.http.post<IUser>(`${this.baseUrl}/user`, user)
   }
+
+  private getScore(id: string): Observable<IUser>{
+    return this.http.get<IUser>(`${this.baseUrl}/user/${id}`);
+  }
+
+  public setScore(id: string, userScore: number){
+    this.getScore(id).pipe(tap(user => {
+      user.score! += userScore
+      this.http.put(`${this.baseUrl}/user/${id}`, user)
+    })).subscribe()
+  }
+
 }

@@ -3,7 +3,7 @@ import {FormGroup, FormControl , Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UserService} from "../../core/services/user.service";
-import {tap} from "rxjs";
+import {pipe, tap} from "rxjs";
 import {loginUserInt} from "../../core/interfaces/loginUserInt";
 import {IUser} from "../../core/interfaces/userInterface";
 
@@ -36,15 +36,13 @@ export class LoginComponent implements OnInit {
   public onLogin(){
     this.UserService.userLogin(this.loginFormGroup.value as loginUserInt).pipe(tap((response: IUser | undefined) => {
       if (response){
-        //TS2345: Argument of type 'string | number | undefined' is not assignable to parameter of
-        // type 'string'.   Type 'undefined' is not assignable to type 'string'.
-        if (typeof response.id === "string") {
-          localStorage.setItem('id', response.id)
-        }
+        localStorage.setItem("id", (response.id)!.toString())
         localStorage.setItem('email', response.email)
         localStorage.setItem('fullName', response.fullName)
         console.log(localStorage)
         this.router.navigateByUrl('/mainMenu').then()
+      }else {
+        alert('The entered data is incorrect')
       }
 
     })).subscribe()

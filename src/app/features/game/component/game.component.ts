@@ -9,10 +9,11 @@ import {
 } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {GameService} from "../../core/services/game.service";
-import {gameSettingInt} from "../../core/interfaces/gameSettingInt";
+import {GameService} from "../../../core/services/game.service";
+import {gameSettingInt} from "../../../core/interfaces/gameSettingInt";
 import {tap} from "rxjs";
-import {resultsInt} from "../../core/interfaces/resultsInt";
+import {resultsInt} from "../../../core/interfaces/resultsInt";
+import {UserService} from "../../../core/services/user.service";
 
 @Component({
   selector: 'app-game',
@@ -24,6 +25,7 @@ export class GameComponent implements OnInit {
   constructor(private http: HttpClient,
               private router: Router,
               private gameService: GameService,
+              private UserService: UserService
               ) {
   }
 
@@ -94,6 +96,8 @@ export class GameComponent implements OnInit {
   public nextQuestion(){
     if (this.ansProgress == 10){
       this.EndGameActive = true;
+      const id = localStorage.getItem('id')
+      this.UserService.setScore(id!, this.score)
       return;
     }
     this.btnMakeDisable(false);
@@ -116,7 +120,7 @@ export class GameComponent implements OnInit {
   public generateQuestion(){
     this.ansProgress++
     this.ansPercent += 10;
-    // this.gameService.getQuestion(this.settings.category, this.settings.diff)
+
     this.gameService.getQuestion(0, 0).pipe(tap((res: resultsInt) => {
       this.question.nativeElement.innerHTML = res.results[0].question;
 
