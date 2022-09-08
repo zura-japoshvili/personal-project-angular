@@ -10,8 +10,7 @@ import {Router} from "@angular/router";
 export class NavigationComponent implements OnInit {
 
   constructor(private router: Router) { }
-  // public fullName = localStorage.getItem('fullName');
-  public fullName = 'asdas'
+  public fullName = localStorage.getItem('fullName');
   ngOnInit(): void {
   }
 

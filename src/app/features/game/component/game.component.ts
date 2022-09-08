@@ -15,6 +15,7 @@ import {tap} from "rxjs";
 import {resultsInt} from "../../../core/interfaces/resultsInt";
 import {UserService} from "../../../core/services/user.service";
 
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -26,7 +27,7 @@ export class GameComponent implements OnInit {
               private router: Router,
               private gameService: GameService,
               private UserService: UserService
-              ) {
+  ) {
   }
 
   @ViewChild('question') question!:ElementRef
@@ -48,8 +49,8 @@ export class GameComponent implements OnInit {
   }
 
   private randomAnswers(arr: [], correct: string): string[]{
-      let array: string[] = arr;
-          array.push(correct)
+    let array: string[] = arr;
+    array.push(correct)
 
     let length = 4;
     let randomArr = []
@@ -106,13 +107,7 @@ export class GameComponent implements OnInit {
   }
 
   public resetGame(){
-    this.score = 0
-    this.ansProgress = 1;
-    this.ansPercent = 10;
-    this.combo = 0;
-    this.EndGameActive = false
-
-    this.generateQuestion()
+    location.reload()
   }
   public returnMenu(){
     this.router.navigateByUrl('/main-menu').then()
@@ -128,8 +123,8 @@ export class GameComponent implements OnInit {
 
       this.Answers.forEach((value, index) => {
         value.nativeElement.innerHTML = randomAnswers[index]
-        value.nativeElement.addEventListener('click',() =>{
-          if (value.nativeElement.innerHTML == res.results[0].correct_answer){
+        value.nativeElement.addEventListener('click',(event: MouseEvent) =>{
+          if ((event.currentTarget as HTMLInputElement).innerHTML == res.results[0].correct_answer){
             this.afterAnswered(value, true)
           }else {
             this.afterAnswered(value,false)

@@ -24,11 +24,10 @@
     <div [className]="EndGameActive ? 'end-wrapper active' : 'end-wrapper'">
       <h4>Your score is: {{score}}</h4>
       <div class="btn-cont">
-        <button (click)="resetGame()">Play Again</button>
-        <button (click)="returnMenu()">Main Menu</button>
+        <button class="againBtn" (click)="resetGame()">Play Again</button>
+        <button class="menuBtn" (click)="returnMenu()">Main Menu</button>
       </div>
     </div>
   </div>
-
 </div>
 

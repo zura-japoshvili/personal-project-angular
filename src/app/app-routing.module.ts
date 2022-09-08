@@ -23,8 +23,8 @@ const routes: Routes = [
     path: 'main-menu',
     canActivate: [LoginGuard],
     loadChildren: () =>
-      import('./features/main-menu/mainmenu.module').then(
-        (res) => res.MainmenuModule)
+      import('./features/main-menu/main-menu.module').then(
+        (res) => res.MainMenuModule)
   }
   ,
   {
@@ -49,7 +49,7 @@ const routes: Routes = [
       import('./features/scoreboard/scoreboard.module').then(
         (res) => res.ScoreboardModule
       ),
-    // canActivate: [LoginGuard]
+    canActivate: [LoginGuard]
   },
   {
     path: '**',

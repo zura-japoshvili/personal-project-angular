@@ -14,4 +14,4 @@ import {NavigationModule} from "../../shared/navigation/navigation.module";
     NavigationModule
   ],
 })
-export class MainmenuModule { }
+export class MainMenuModule { }

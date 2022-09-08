@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('email', response.email)
         localStorage.setItem('fullName', response.fullName)
         console.log(localStorage)
-        this.router.navigateByUrl('/mainMenu').then()
+        this.router.navigateByUrl('/main-menu').then()
       }else {
         alert('The entered data is incorrect')
       }

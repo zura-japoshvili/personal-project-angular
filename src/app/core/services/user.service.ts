@@ -4,6 +4,7 @@ import {map, tap} from "rxjs";
 import {IUser} from "../interfaces/userInterface";
 import {Observable} from "rxjs";
 import {loginUserInt} from "../interfaces/loginUserInt";
+import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,8 @@ export class UserService {
   public setScore(id: string, userScore: number){
     this.getScore(id).pipe(tap(user => {
       user.score! += userScore
-      this.http.put(`${this.baseUrl}/user/${id}`, user)
+
+      this.http.put(`${this.baseUrl}/user/${id}`, user).subscribe();
     })).subscribe()
   }
 
