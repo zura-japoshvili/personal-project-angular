@@ -26,10 +26,10 @@
     <div>
       <label>Re-Password</label>
       <input type="password" formControlName="confirmPassword">
+      <ng-container *ngIf="regFormGroup.errors?.['noMatch']">
+        <span>Repeated password does not match</span>
+      </ng-container>
     </div>
-    <ng-container *ngIf="!validatePass && pass.touched">
-      <span>Repeated password does not match</span>
-    </ng-container>
     <p>Already have an account? <span (click)="toLogin()">Sign in</span></p>
     <button (click)="onRegister()" [disabled]="regFormGroup.invalid" >Register</button>
   </form>

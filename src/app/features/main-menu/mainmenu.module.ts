@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MainMenuComponent} from "./component/main-menu.component";
 import {RouterModule} from "@angular/router";
-import {NavigationComponent} from "../../shared/navigation/navigation.component";
+import {NavigationModule} from "../../shared/navigation/navigation.module";
 
 
 
@@ -10,7 +10,8 @@ import {NavigationComponent} from "../../shared/navigation/navigation.component"
   declarations: [MainMenuComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: '', component: MainMenuComponent }])
-  ]
+    RouterModule.forChild([{ path: '', component: MainMenuComponent }]),
+    NavigationModule
+  ],
 })
 export class MainmenuModule { }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UserService} from "../../../core/services/user.service";
-import {Observable, tap} from "rxjs";
+import {map, observable, Observable, of, tap} from "rxjs";
 import {IUser} from "../../../core/interfaces/userInterface";
 
 @Component({
@@ -18,17 +18,16 @@ export class ScoreboardComponent implements OnInit {
               private UserService: UserService) {
 
   }
-  userScore!: IUser[]
+  userScore!: Observable<IUser[]>
 
   ngOnInit(): void {
-    this.getScore()
+    this.userScore = this.getScore()
+    console.log(this.userScore)
   }
-  public getScore (){
-    this.UserService.getAllUsers().pipe(tap(value => {
+  public getScore (): Observable<IUser[]>{
+    return this.UserService.getAllUsers().pipe(map((value:IUser[]) => {
       let array = value
-      array.sort((a, b) => b.score! - a.score!)
-
-      this.userScore = array
+      return array.sort((a, b) => b.score! - a.score!)
     }))
   }
 }

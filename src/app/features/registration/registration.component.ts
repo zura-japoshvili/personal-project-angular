@@ -48,11 +48,5 @@ export class RegistrationComponent implements OnInit {
   get pass(){
     return this.regFormGroup.get('password') as FormControl
   }
-  get validatePass(){
-    if (this.regFormGroup.get('password') !== this.regFormGroup.get('confirmPassword')){
-      return true;
-    }
-    return false;
-  }
 
 }

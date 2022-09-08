@@ -1,7 +1,17 @@
-<!--<app-navigation></app-navigation>-->
+<app-navigation></app-navigation>
 <div class="scoreboard">
-  <p>1123123</p>
-    <ng-container *ngFor="let user of userScore | async">
-        <p>{{user.score}}</p>
+    <table>
+      <tr>
+        <th>Pos</th>
+        <th>FullName</th>
+        <th>Score</th>
+      </tr>
+    <ng-container *ngFor="let user of userScore | async index as i">
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{user.fullName}}</td>
+        <td>{{user.score}}</td>
+      </tr>
     </ng-container>
+    </table>
 </div>
