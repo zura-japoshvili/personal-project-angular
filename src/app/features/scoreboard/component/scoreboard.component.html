@@ -1,17 +1,18 @@
 <app-navigation></app-navigation>
 <div class="scoreboard">
-    <table>
-      <tr>
-        <th>Pos</th>
-        <th>FullName</th>
-        <th>Score</th>
-      </tr>
-    <ng-container *ngFor="let user of userScore | async index as i">
-      <tr>
-        <td>{{i+1}}</td>
-        <td>{{user.fullName}}</td>
-        <td>{{user.score}}</td>
-      </tr>
-    </ng-container>
-    </table>
+  <h1>Top 10</h1>
+  <table>
+    <tr>
+      <th>Pos</th>
+      <th>FullName</th>
+      <th>Score</th>
+    </tr>
+  <ng-container *ngFor="let user of userScore | async index as i">
+    <tr>
+      <td>{{i+1}}</td>
+      <td>{{user.fullName}}</td>
+      <td>{{user.score}}</td>
+    </tr>
+  </ng-container>
+  </table>
 </div>

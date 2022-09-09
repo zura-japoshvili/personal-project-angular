@@ -14,6 +14,7 @@ import {gameSettingInt} from "../../../core/interfaces/gameSettingInt";
 import {tap} from "rxjs";
 import {resultsInt} from "../../../core/interfaces/resultsInt";
 import {UserService} from "../../../core/services/user.service";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 
 @Component({

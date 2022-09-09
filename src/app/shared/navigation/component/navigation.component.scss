@@ -6,15 +6,13 @@ nav{
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  background-color: #0a55de;
-  p{
-    font-size: 22px;
-    color: #ffffff;
-  }
-  button{
-    background-color: #e54f4f;
-    color: #ffffff;
+  justify-content: space-between;
+  background-color: #4983ec;
+  padding: 0 20px;
+  > button{
+    background-color: #6c0b57;
+    box-shadow: 2px 2px 5px 0px #000000;
+    color: #b4ffdb;
     height: 30px;
     border: none;
     width: 70px;
@@ -25,6 +23,28 @@ nav{
     &:hover{
       box-shadow: 1px 0px 20px 0px #ab0000;
       transform: scale(1.1);
+    }
+  }
+  div{
+    display: flex;
+    p{
+      font-size: 22px;
+      color: #ffffff;
+    }
+    button{
+      background-color: #e54f4f;
+      color: #ffffff;
+      height: 30px;
+      border: none;
+      width: 70px;
+      border-radius: 8px;
+      margin: 0 25px;
+      cursor: pointer;
+      transition-duration: 0.5s;
+      &:hover{
+        box-shadow: 1px 0px 20px 0px #ab0000;
+        transform: scale(1.1);
+      }
     }
   }
 }

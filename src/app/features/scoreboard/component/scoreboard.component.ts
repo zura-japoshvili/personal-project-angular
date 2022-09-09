@@ -22,12 +22,16 @@ export class ScoreboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.userScore = this.getScore()
-    console.log(this.userScore)
   }
   public getScore (): Observable<IUser[]>{
     return this.UserService.getAllUsers().pipe(map((value:IUser[]) => {
-      let array = value
-      return array.sort((a, b) => b.score! - a.score!)
+      value.sort((a, b) => b.score! - a.score!)
+      const count = value.length - 10
+      if (value.length > 10){
+        // console.log(value.length - 10)
+        value.splice(9, count);
+      }
+      return value
     }))
   }
 }
